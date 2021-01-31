@@ -54,6 +54,9 @@ class mysql_handle():
             self.conn.commit()
             return_result['data'] = self.cur.fetchall()
             logging.info('SQL执行成功:' + self.special_handling_spaces(sql))
+
+            print(return_result)
+
             return return_result
         except pymysql.Warning as w:
             logging.warning('WARNING:' + str(w))

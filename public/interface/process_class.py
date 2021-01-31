@@ -179,6 +179,7 @@ class process_class():
             else:
                 self.process_log_data['remark'] += "Error! 参数替换格式错误，期望替换内容为：" + str(i)
 
+        print("return_inputparameter_dict: " + str(return_inputparameter_dict))
         return return_inputparameter_dict
 
 
@@ -366,6 +367,7 @@ class process_class():
 
         body_replace = '&'.join(body_replace_list)
 
+        print(body_replace)
         self.interface_data['body'] = body_replace
 
     def write_process_exc_log_database(self):
@@ -597,7 +599,7 @@ class process_class():
                         self.process_log_data['jump_process_tag'] = self.process_data['fail_jump']
                         self.process_log_data['remark'] += 'Error! 流程执行失败' + str(self.process_data['process_tag'])
 
-                    # print(self.global_dict)
+                    print(self.global_dict)
                     self.write_process_exc_log_database()
 
 
